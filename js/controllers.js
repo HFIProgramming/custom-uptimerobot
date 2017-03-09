@@ -239,7 +239,7 @@ angular
   }])
   .controller('MonitorPageCtrl', ['$scope', '$http', '$timeout', 'Repeater', function ($scope, $http, $timeout, Repeater) {
     // pageID and monitorID defined at html, globally
-    var url = 'https://status.hfi.me/api?function=monit&monit=' + monitorID;
+    var url = 'https://status.hfi.me/api/?function=monit&monit=' + monitorID;
 
     var firstRun = true;
 
