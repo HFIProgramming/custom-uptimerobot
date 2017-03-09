@@ -34,7 +34,7 @@ function getContent($url)
 			],
 		];
 		$result = file_get_contents($url, false, stream_context_create($opts));
-		var_dump($result);
+		echo $url;
 		if ($result) {
 			echo $result;
 		} else {
