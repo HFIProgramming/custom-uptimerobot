@@ -1,6 +1,6 @@
 <?php
 $pageId = 'oVp3YhBVk';
-$address = 'https://stats.uptimerobot.com';
+$address = 'https://stats.uptimerobot.com/api';
 error_reporting(0);
 if (isset($_GET['function'])) {
 	$function = urldecode($_GET['function']);
@@ -38,6 +38,7 @@ function getContent($url)
 			],
 		];
 		$result = file_get_contents($url, false, stream_context_create($opts));
+		var_dump($result);
 		if ($result) {
 			echo $result;
 		} else {
