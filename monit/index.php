@@ -38,9 +38,8 @@ if (empty($_GET['monit'])) {
     <script src="/js/services.js"></script>
     <script src="/js/lib/bootbox.min.js"></script>
     <script type="text/javascript">
-    <!--var pageID = "oVp3YhBVk";
-    var monitorID = "<?php //echo $uri[2] ?>";
-    (function() {})(pageID, monitorID); -->
+    var monitorID = "<?php echo $_GET['monit']?>";
+    (function() {})(monitorID);
   </script>
     <script src="/js/app.js"></script>
     <script>window.flushHitokoto=function(){var hjs=document.createElement("script");hjs.setAttribute("src","https://api.lwl12.com/hitokoto/main/get?encode=json");document.body.appendChild(hjs)};setTimeout(window.flushHitokoto,1000);window.echokoto=function(result){document.getElementsByClassName("hitokoto")[0].innerHTML=result.hitokoto};</script>
