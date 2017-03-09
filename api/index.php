@@ -27,10 +27,16 @@ if (isset($_GET['function'])) {
 function getContent($url)
 {
 	if (!empty($url)) {
-		$opts = ['https' => [
-			'method'  => 'GET',
-			'timeout' => 10,
-		]];
+		$opts = [
+			'http' => [
+				'method'  => 'GET',
+				'timeout' => 10,
+			],
+			'ssl'  => [
+				"verify_peer"      => true,
+				"verify_peer_name" => true,
+			],
+		];
 		$result = file_get_contents($url, false, stream_context_create($opts));
 		if ($result) {
 			echo $result;
