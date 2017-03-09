@@ -8,7 +8,7 @@ if (isset($_GET['addr'])) {
 			'method'  => 'GET',
 			'timeout' => 10,
 		]];
-		$result = file_get_contents('http://stats.uptimerobot.com/' . $url, false, stream_context_create($opts));
+		$result = file_get_contents('http://stats.uptimerobot.com/api/' . $url, false, stream_context_create($opts));
 		if ($result) {
 			echo $result;
 		} else {
