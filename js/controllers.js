@@ -7,7 +7,7 @@ function askAuth($http, getDataFromRemote) {
         return;
 
       console.log('result:', result);
-      $http.post('/api/auth/' + pageID, { pass: result })
+      $http.post("/api?addr=auth/" + pageID, { pass: result })
         .then(success)
         .catch(fail);
       function success(data) {
@@ -56,7 +56,7 @@ angular
 
     function getDataFromRemote() {
       $http
-        .get('/api/status-page/' + pageID + '/' + pageNumber + '?sort=' + sortType)
+        .get("/api?addr=status-page/" + pageID + '/' + pageNumber + '?sort=' + sortType)
         .then(processRemoteData)
         .catch(function (data) {
           console.log('error:', data);
@@ -239,7 +239,7 @@ angular
   }])
   .controller('MonitorPageCtrl', ['$scope', '$http', '$timeout', 'Repeater', function ($scope, $http, $timeout, Repeater) {
     // pageID and monitorID defined at html, globally
-    var url = '/api/monitor-page/' + [pageID, monitorID].join('/');
+    var url = '/api?addr=monitor-page/' + [pageID, monitorID].join('/');
 
     var firstRun = true;
 
