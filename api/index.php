@@ -27,7 +27,7 @@ if (isset($_GET['function'])) {
 function getContent($url)
 {
 	if (!empty($url)) {
-		$opts = ['http' => [
+		$opts = ['https' => [
 			'method'  => 'GET',
 			'timeout' => 10,
 		]];
