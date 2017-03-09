@@ -2,7 +2,7 @@
 error_reporting(0);
 if (isset($_GET['addr'])) {
 	$url = urldecode($_GET['addr']);
-	if (preg_match('\S+(oVp3YhBVk)\S+',$url)) { // I know can be rounded but. I just keep it here :)
+	if (preg_match('/oVp3YhBVk/',$url)) { // I know can be rounded but. I just keep it here :)
 		$opts = ['http' => [
 			'method'  => 'GET',
 			'timeout' => 10,
