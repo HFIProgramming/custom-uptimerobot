@@ -7,7 +7,7 @@ function askAuth($http, getDataFromRemote) {
         return;
 
       console.log('result:', result);
-      $http.post("/api?addr=auth/" + pageID, { pass: result })
+      $http.post("/api?function=auth", { pass: result })
         .then(success)
         .catch(fail);
       function success(data) {
@@ -45,7 +45,7 @@ angular
     var firstRun = true;
 
     // pageID defined at html, globally
-    $scope.pageID = pageID;
+    //$scope.pageID = pageID;
     $scope.pageNumber = pageNumber;
     $scope.showURLinks = true;
 
@@ -56,7 +56,7 @@ angular
 
     function getDataFromRemote() {
       $http
-        .get("/api?addr=status-page/" + pageID + '/' + pageNumber + '?sort=' + sortType)
+        .get("/api?function=status" + '&pagenumber=' + pageNumber + '&sorttype=' + sortType)
         .then(processRemoteData)
         .catch(function (data) {
           console.log('error:', data);
@@ -109,7 +109,7 @@ angular
       $scope.psp.monitors.forEach(function (mon) {
         mon.statusPageURL = noPrefix
           ? '/' + mon.id
-          : '/' + pageID + '/' + mon.id;
+          : '/' + 'monit' + '?monit=' + mon.id;
       });
 
       // truncate first announcement's title
@@ -239,7 +239,7 @@ angular
   }])
   .controller('MonitorPageCtrl', ['$scope', '$http', '$timeout', 'Repeater', function ($scope, $http, $timeout, Repeater) {
     // pageID and monitorID defined at html, globally
-    var url = '/api?addr=monitor-page/' + [pageID, monitorID].join('/');
+    var url = '/api?function=monit&monit=' + monitorID;
 
     var firstRun = true;
 

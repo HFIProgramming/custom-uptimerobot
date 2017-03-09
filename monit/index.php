@@ -1,12 +1,9 @@
 <?php
-$uri = explode('/', $_GET["uri"]);
-if ($uri[2] === "oVp3YhBVk") {
-    if (empty($uri[3])) {
-        Header( "Location: /" );
-        exit;
-    }
+if (empty($_GET['monit'])) {
+	Header("Location: /");
+	exit;
+}
 ?>
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -18,7 +15,7 @@ if ($uri[2] === "oVp3YhBVk") {
     <meta name="robots" content="all,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NoticeBoard Status -
-        <?php echo $uri[2] ?>
+        Details
     </title>
     <!-- angular.min.js -->
     <script type="text/javascript" src="//cdn.bootcss.com/angular.js/1.5.0-rc.0/angular.min.js"></script>
@@ -41,9 +38,9 @@ if ($uri[2] === "oVp3YhBVk") {
     <script src="/js/services.js"></script>
     <script src="/js/lib/bootbox.min.js"></script>
     <script type="text/javascript">
-    var pageID = "oVp3YhBVk";
-    var monitorID = "<?php echo $uri[2] ?>";
-    (function() {})(pageID, monitorID);
+    <!--var pageID = "oVp3YhBVk";
+    var monitorID = "<?php //echo $uri[2] ?>";
+    (function() {})(pageID, monitorID); -->
   </script>
     <script src="/js/app.js"></script>
     <script>window.flushHitokoto=function(){var hjs=document.createElement("script");hjs.setAttribute("src","https://api.lwl12.com/hitokoto/main/get?encode=json");document.body.appendChild(hjs)};setTimeout(window.flushHitokoto,1000);window.echokoto=function(result){document.getElementsByClassName("hitokoto")[0].innerHTML=result.hitokoto};</script>
@@ -59,7 +56,7 @@ if ($uri[2] === "oVp3YhBVk") {
             />
             <h2 class="nologo positive" ng-if="pspDataLoaded && psp.logo === null">{{ psp.name }}</h2>
 
-            <a href="/oVp3YhBVk" class="back">&lt;-- Back</a>
+            <a href="/" class="back">&lt;-- Back</a>
         </div>
     </header>
     <!--Header ebd-->
@@ -217,8 +214,3 @@ if ($uri[2] === "oVp3YhBVk") {
 </body>
 
 </html>
-<?php
-} else {
-    header("HTTP/1.1 404 Not Found");
-}
-?>
