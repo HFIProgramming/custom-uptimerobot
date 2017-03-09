@@ -7,7 +7,7 @@ function askAuth($http, getDataFromRemote) {
         return;
 
       console.log('result:', result);
-      $http.post("/api?function=auth", { pass: result })
+      $http.post("/api/?function=auth", { pass: result })
         .then(success)
         .catch(fail);
       function success(data) {
@@ -56,7 +56,7 @@ angular
 
     function getDataFromRemote() {
       $http
-        .get("https://status.hfi.me/api?function=status" + '&pagenumber=' + pageNumber + '&sorttype=' + sortType)
+        .get("api/?function=status" + '&pagenumber=' + pageNumber + '&sorttype=' + sortType)
         .then(processRemoteData)
         .catch(function (data) {
           console.log('error:', data);
