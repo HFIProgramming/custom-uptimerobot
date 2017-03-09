@@ -19,10 +19,10 @@ if (empty($_GET['monit'])) {
     </title>
     <!-- angular.min.js -->
     <base href="https://status.hfi.me" />
-    <script type="text/javascript" src="//cdn.bootcss.com/angular.js/1.5.0-rc.0/angular.min.js"></script>
-    <script src="/js/jquery-1.10.1.min.js"></script>
-    <script src="/js/bootstrap.js"></script>
-    <script src="/js/jquery.jqplot.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/angular.js/2.0.0-beta.17/angular2.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.js"></script>
+    <script src="//cdn.bootcss.com/jqPlot/1.0.9/jquery.jqplot.js"></script>
     <script src="/js/lib/jquery.flot.min.js"></script>
     <script src="/js/lib/jquery.flot.time.js"></script>
     <script src="/js/lib/jquery.flot.resize.js"></script>
@@ -37,7 +37,7 @@ if (empty($_GET['monit'])) {
     <script src="/js/ui-chart.js"></script>
     <script src="/js/controllers.js"></script>
     <script src="/js/services.js"></script>
-    <script src="/js/lib/bootbox.min.js"></script>
+    <script src="//cdn.bootcss.com/bootbox.js/4.4.0/bootbox.min.js"></script>
     <script type="text/javascript">
     var monitorID = "<?php echo $_GET['monit']?>";
     (function() {})(monitorID);
