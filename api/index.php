@@ -2,8 +2,7 @@
 error_reporting(0);
 if (isset($_GET['addr'])) {
 	$url = urldecode($_GET['addr']);
-	$referer = parse_url($_SERVER['HTTP_REFERER']);
-	if (true) {
+	if (preg_match('oVp3YhBVk',$url)) {
 		$opts = ['http' => [
 			'method'  => 'GET',
 			'timeout' => 10,
