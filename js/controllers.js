@@ -56,7 +56,7 @@ angular
 
     function getDataFromRemote() {
       $http
-        .get("/api?function=status" + '&pagenumber=' + pageNumber + '&sorttype=' + sortType)
+        .get("https://status.hfi.me/api?function=status" + '&pagenumber=' + pageNumber + '&sorttype=' + sortType)
         .then(processRemoteData)
         .catch(function (data) {
           console.log('error:', data);
@@ -239,7 +239,7 @@ angular
   }])
   .controller('MonitorPageCtrl', ['$scope', '$http', '$timeout', 'Repeater', function ($scope, $http, $timeout, Repeater) {
     // pageID and monitorID defined at html, globally
-    var url = '/api?function=monit&monit=' + monitorID;
+    var url = 'https://status.hfi.me/api?function=monit&monit=' + monitorID;
 
     var firstRun = true;
 
