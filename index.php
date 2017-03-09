@@ -1,7 +1,7 @@
 <?php
 $uri = explode('/', $_GET["uri"]);
-if ($uri[1] === "oVp3YhBVk") {
-    if (empty($uri[2])) {
+if ($uri[2] === "oVp3YhBVk") {
+    if (empty($uri[3])) {
         Header( "Location: /" );
         exit;
     }
@@ -220,6 +220,6 @@ if ($uri[1] === "oVp3YhBVk") {
 <?php
 } else {
     header("HTTP/1.1 404 Not Found");
-    //include("/data/wwwroot/status.lwl12.com/errpage/404.html");
+    include("/data/wwwroot/status.lwl12.com/errpage/404.html");
 }
 ?>
