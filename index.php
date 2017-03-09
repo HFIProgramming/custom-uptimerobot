@@ -17,11 +17,11 @@ if ($uri[2] === "oVp3YhBVk") {
     <meta name="format-detection" content="telephone=no" />
     <meta name="robots" content="all,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LWL Services Status -
+    <title>NoticeBoard Status -
         <?php echo $uri[2] ?>
     </title>
     <!-- angular.min.js -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/angular.js/1.5.0-rc.0/angular.min.js"></script>
     <script src="/js/jquery-1.10.1.min.js"></script>
     <script src="/js/bootstrap.js"></script>
     <script src="/js/jquery.jqplot.js"></script>
