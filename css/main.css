@@ -1,0 +1,920 @@
+@import url(bootstrap.css);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+/* ********************************************************************** */
+/* ************************** General HTML TAGs ************************* */
+/* ********************************************************************** */
+
+body {
+	background:#f1f1f1;
+	color:#666666;
+	font-family:'Montserrat','Lucida Grande','Helvetica Neue',Helvetica,Arial,Verdana,'PingFang SC','Hiragino Sans GB',STHeiti,'Microsoft YaHei','WenQuanYi Micro Hei','WenQuanYi Micro Hei Mono','WenQuanYi Zen Hei','WenQuanYi Zen Hei Mono','Noto Sans CJK SC','Source Han Sans CN',SimSun,sans-serif;
+	font-weight:400;
+	font-size:14px;
+}
+
+.table .label {
+    margin: 3px 0 !important;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    vertical-align: middle !important;
+}
+.down {
+    background: #ffcc66;
+}
+th.ng-binding.ng-scope {
+    text-align: center;
+}
+ul, ol {
+	list-style: none;
+}
+
+input, textarea {
+	font: inherit;
+}
+
+p {
+	line-height: 28px;
+	margin:0 0 28px;
+}
+
+h2, .h2 {
+	margin:0 0 30px;
+}
+h1, .h2,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+	font-weight:400;
+}
+a {
+	color:#666666;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+.btn.btn-round {
+	border-radius:30px;
+	-moz-border-radius:30px;
+	-webkit-border-radius:30px;
+	padding-left:22px;
+	padding-right:22px;
+}
+.right-align {
+	text-align:right;
+}
+.positive,
+.success {
+	color:#80BA27;
+}
+.danger {
+	color:#ff0000;
+}
+.info {
+	color:#000000;
+}
+.warning {
+	color:#f7921e;
+}
+.label.label-warning {
+	background:#F7921E;
+}
+.label.label-black {
+	background:#000000;
+}
+.label.label-empty {
+	background:#9c9b9b;
+}
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 55px;
+	padding-right: 55px;
+}
+.center {
+	text-align: center;
+}
+@media (min-width: 768px) {
+  .container {
+	padding-left:15px;
+	padding-right:15px
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 990px;
+    padding-left:30px;
+    padding-right:30px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    width: 1150px;
+  }
+}
+@media (min-width: 1360px) {
+  .container {
+    width: 1280px;
+  }
+}
+@media (min-width: 1200px) {
+	
+}
+
+/* ********************************************************************** */
+/* ***************************** Header  ******************************** */
+/* ********************************************************************** */
+
+#header {
+	padding:20px 0 53px;
+	position:relative;
+	z-index:1;
+}
+#header .container {
+	position:relative;
+}
+.logo {
+	display:block;
+	margin:0 auto;
+}
+.nologo {
+	display:block;
+	margin:0 auto;
+	text-align: center;
+}
+.current-status {
+	overflow:hidden;
+ 	font-size:12px;
+	
+	line-height:15px;
+}
+#header .current-status {
+	position:absolute;
+	bottom:-10px;
+	left:30px;
+	width:100%;
+}
+.monitor-header .current-status {
+	text-align:left;
+	float:right;
+	white-space:nowrap;
+	margin-right:18px;
+}
+.monitor-header .btn {
+	float:right;
+}
+.current-status h3 {
+	font-size:20px;
+	font-weight:400;
+	float:left;
+	margin:4px 12px 0 0;
+	
+}
+.current-status .bullet {
+	width:28px;
+	height:28px;
+	border-radius:14px;
+	-moz-border-radius:14px;
+	-webkit-border-radius:14px;
+	display:block;
+	float:left;
+	margin-right:15px;
+	margin-top:1px;
+}
+.current-status strong {
+	color:#80BA27;
+	font-weight:400;
+	display:block;
+	float:left;
+	clear:right;
+}
+.current-status span {
+	color:#808080;
+	display:block;
+}
+.table .label {
+	display:block;
+	border-radius:0;
+	font-size:12px;
+	padding:5px;
+	line-height:15px;
+	margin:0 0 10px;
+	font-weight:400;
+}
+.table {
+	border:none;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+	padding:8px 1px;
+}
+.table > thead > tr > th {
+	border-bottom:solid 1px #b3b3b3;
+	border-top:none;
+	color:#808080;
+	font-weight:400;
+}
+.table > tbody > tr > td {
+	border:none;
+}
+.table h4 {
+	margin:0;
+}
+
+hr {
+	margin:30px 0;
+	border-top:solid 1px #b3b3b3;
+}
+/* ********************************************************************** */
+/* *************************** Main Content ***************************** */
+/* ********************************************************************** */
+
+#header .container .current-status {
+    right: 50px;
+    left: inherit;
+    width: auto;
+    bottom: 0;
+}
+h2.nologo {
+    text-align: left;
+}
+.mon-name {
+	font-family: 'YaHei Consolas Hybrid', 'Consolas', 'Montserrat','Lucida Grande','Helvetica Neue',Helvetica,Arial,Verdana,'PingFang SC','Hiragino Sans GB',STHeiti,'Microsoft YaHei','WenQuanYi Micro Hei','WenQuanYi Micro Hei Mono','WenQuanYi Zen Hei','WenQuanYi Zen Hei Mono','Noto Sans CJK SC','Source Han Sans CN',SimSun,sans-serif !important;
+}
+#content .container{
+	padding-top:53px;
+	padding-bottom:53px;
+	/*background:#FFF center top no-repeat;*/
+}
+.alert.alert-info {
+	background:#f2f2f2;
+	color:#666666;
+	padding:23px;
+}
+
+.panel-group#announcement {
+	margin-bottom:30px;
+}
+#announcement .panel {
+	border:none;
+}
+#announcement .panel-default > .panel-heading {
+	border:none;
+	padding:7px 0;
+	background:#f2f2f2;
+	color:#666666;
+	overflow:hidden;
+	position:relative;
+}
+#announcement .panel-default > .panel-heading + .panel-collapse > .panel-body {
+	border:none;
+}
+#announcement h3 {
+	color:#80BA27;
+	font-size:18px;
+	padding:17px 42px 17px 24px;
+	border-right:solid 1px #e6e6e6;
+	float:left;
+	margin:0 32px 0 0;
+	font-weight:400;
+}
+#announcement h4 {
+	color:#666666;
+	font-size:18px;
+	font-weight:400;
+	padding:17px 0;
+	margin:0;
+}
+#announcement .arrow {
+	display:block;
+	background:url('../images/announcement-arrow.png') 0 0 no-repeat;
+	width:21px;
+	height:10px;
+	position:absolute;
+	top:50%;
+	right:20px;
+	margin-top:-5px;
+}
+.stats {
+	margin:0;
+	padding:0;
+}
+.stats li {
+	overflow:hidden;
+	font-size:18px;
+	line-height:30px;
+	margin-bottom:12px;
+}
+.stats li .bullet {
+	width:30px;
+	height:30px;
+	border-radius:15px;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	display:block;
+	float:left;
+	margin-right:15px;
+	margin-top:1px;
+}
+.bullet-success {
+	background:#80BA27;
+}
+.bullet-danger {
+	background:#cc3300;
+}
+.bullet-warning {
+	background:#f7921e;
+}
+.bullet-info {
+	background:#17252E;
+}
+.overall {
+	font-size:18px;
+	line-height:30px;
+	padding:0;
+}
+.overall li {
+	overflow:hidden;
+	margin-bottom:12px;
+}
+.overall strong {
+	display:block;
+	width:82px;
+	float:left;
+	font-weight:400;
+	line-height:30px;
+}
+
+.monitor-header {
+	margin-bottom:40px;
+}
+.monitor-header h2 {
+	display:inline;
+	font-size:30px;
+	font-weight:400;
+	margin:0 6px 0 0;
+}
+.monitor-header h4 {
+	display:inline;
+	font-size:18px;
+	font-weight:400;
+	margin:0;
+	color:#808080;
+}
+.monitor-header strong {
+	font-weight:400;
+	color:#000000;
+	font-size:16px;
+	display:block;
+	margin-top:10px;
+}
+.monitor-header span {
+	color:#666666;
+}
+.monitor-header .current-status,
+.monitor-header .btn{
+	margin-top:18px;
+}
+.monitor-header .current-status strong {
+	margin:0;
+	font-size:12px;
+}
+.monitor-table .label {
+	padding:12px 5px;
+}
+
+
+/*rules for the plot target div.  These will be cascaded down to all plot elements according to css rules*/
+.jqplot-target {
+    position: relative;
+    color: #666666;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 1em;
+/*    height: 300px;
+    width: 400px;*/
+}
+
+/*rules applied to all axes*/
+.jqplot-axis {
+    font-size: 0.75em;
+}
+
+.jqplot-xaxis {
+    margin-top: 10px;
+}
+
+.jqplot-x2axis {
+    margin-bottom: 10px;
+}
+
+.jqplot-yaxis {
+    margin-right: 10px;
+}
+
+.jqplot-y2axis, .jqplot-y3axis, .jqplot-y4axis, .jqplot-y5axis, .jqplot-y6axis, .jqplot-y7axis, .jqplot-y8axis, .jqplot-y9axis, .jqplot-yMidAxis {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*rules applied to all axis tick divs*/
+.jqplot-axis-tick, .jqplot-xaxis-tick, .jqplot-yaxis-tick, .jqplot-x2axis-tick, .jqplot-y2axis-tick, .jqplot-y3axis-tick, .jqplot-y4axis-tick, .jqplot-y5axis-tick, .jqplot-y6axis-tick, .jqplot-y7axis-tick, .jqplot-y8axis-tick, .jqplot-y9axis-tick, .jqplot-yMidAxis-tick {
+    position: absolute;
+    white-space: pre;
+}
+
+
+.jqplot-xaxis-tick {
+    top: 0px;
+    /* initial position untill tick is drawn in proper place */
+    left: 15px;
+/*    padding-top: 10px;*/
+    vertical-align: top;
+}
+
+.jqplot-x2axis-tick {
+    bottom: 0px;
+    /* initial position untill tick is drawn in proper place */
+    left: 15px;
+/*    padding-bottom: 10px;*/
+    vertical-align: bottom;
+}
+
+.jqplot-yaxis-tick {
+    right: 0px;
+    /* initial position untill tick is drawn in proper place */
+    top: 15px;
+/*    padding-right: 10px;*/
+    text-align: right;
+}
+
+.jqplot-yaxis-tick.jqplot-breakTick {
+    right: -20px;
+    margin-right: 0px;
+    padding:1px 5px 1px 5px;
+    /*background-color: white;*/
+    z-index: 2;
+    font-size: 1.5em;
+}
+
+.jqplot-y2axis-tick, .jqplot-y3axis-tick, .jqplot-y4axis-tick, .jqplot-y5axis-tick, .jqplot-y6axis-tick, .jqplot-y7axis-tick, .jqplot-y8axis-tick, .jqplot-y9axis-tick {
+    left: 0px;
+    /* initial position untill tick is drawn in proper place */
+    top: 15px;
+/*    padding-left: 10px;*/
+/*    padding-right: 15px;*/
+    text-align: left;
+}
+
+.jqplot-yMidAxis-tick {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.jqplot-xaxis-label {
+    margin-top: 10px;
+    font-size: 11pt;
+    position: absolute;
+}
+
+.jqplot-x2axis-label {
+    margin-bottom: 10px;
+    font-size: 11pt;
+    position: absolute;
+}
+
+.jqplot-yaxis-label {
+    margin-right: 10px;
+/*    text-align: center;*/
+    font-size: 11pt;
+    position: absolute;
+}
+
+.jqplot-yMidAxis-label {
+    font-size: 11pt;
+    position: absolute;
+}
+
+.jqplot-y2axis-label, .jqplot-y3axis-label, .jqplot-y4axis-label, .jqplot-y5axis-label, .jqplot-y6axis-label, .jqplot-y7axis-label, .jqplot-y8axis-label, .jqplot-y9axis-label {
+/*    text-align: center;*/
+    font-size: 11pt;
+    margin-left: 10px;
+    position: absolute;
+}
+
+.jqplot-meterGauge-tick {
+    font-size: 0.75em;
+    color: #999999;
+}
+
+.jqplot-meterGauge-label {
+    font-size: 1em;
+    color: #999999;
+}
+
+table.jqplot-table-legend {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+table.jqplot-table-legend, table.jqplot-cursor-legend {
+    background-color: rgba(255,255,255,0.6);
+    border: 1px solid #cccccc;
+    position: absolute;
+    font-size: 0.75em;
+}
+
+td.jqplot-table-legend {
+    vertical-align:middle;
+}
+
+/*
+These rules could be used instead of assigning
+element styles and relying on js object properties.
+*/
+
+/*
+td.jqplot-table-legend-swatch {
+    padding-top: 0.5em;
+    text-align: center;
+}
+
+tr.jqplot-table-legend:first td.jqplot-table-legend-swatch {
+    padding-top: 0px;
+}
+*/
+
+td.jqplot-seriesToggle:hover, td.jqplot-seriesToggle:active {
+    cursor: pointer;
+}
+
+.jqplot-table-legend .jqplot-series-hidden {
+    text-decoration: line-through;
+}
+
+div.jqplot-table-legend-swatch-outline {
+    border: 1px solid #cccccc;
+    padding:1px;
+}
+
+div.jqplot-table-legend-swatch {
+    width:0px;
+    height:0px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 6px;
+    border-right-width: 6px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+}
+
+.jqplot-title {
+    top: 0px;
+    left: 0px;
+    padding-bottom: 0.5em;
+    font-size: 1.2em;
+}
+
+table.jqplot-cursor-tooltip {
+    border: 1px solid #cccccc;
+    font-size: 0.75em;
+}
+
+
+.jqplot-cursor-tooltip {
+    border: 1px solid #cccccc;
+    font-size: 0.75em;
+    white-space: nowrap;
+    background: rgba(208,208,208,0.5);
+    padding: 1px;
+}
+
+.jqplot-highlighter-tooltip, .jqplot-canvasOverlay-tooltip {
+    border: 1px solid #cccccc;
+    font-size: 0.75em;
+    white-space: nowrap;
+    background: rgba(208,208,208,0.5);
+    padding: 1px;
+}
+
+.jqplot-point-label {
+    font-size: 0.75em;
+    z-index: 2;
+}
+      
+td.jqplot-cursor-legend-swatch {
+    vertical-align: middle;
+    text-align: center;
+}
+
+div.jqplot-cursor-legend-swatch {
+    width: 1.2em;
+    height: 0.7em;
+}
+
+.jqplot-error {
+/*   Styles added to the plot target container when there is an error go here.*/
+    text-align: center;
+}
+
+.jqplot-error-message {
+/*    Styling of the custom error message div goes here.*/
+    position: relative;
+    top: 46%;
+    display: inline-block;
+}
+
+div.jqplot-bubble-label {
+    font-size: 0.8em;
+/*    background: rgba(90%, 90%, 90%, 0.15);*/
+    padding-left: 2px;
+    padding-right: 2px;
+    color: rgb(20%, 20%, 20%);
+}
+
+div.jqplot-bubble-label.jqplot-bubble-label-highlight {
+    background: rgba(90%, 90%, 90%, 0.7);
+}
+
+div.jqplot-noData-container {
+    text-align: center;
+    background-color: rgba(96%, 96%, 96%, 0.3);
+}
+
+#chart {
+	width:100%;
+	height:288px;
+	margin:15px 0 30px;
+}
+.events h4 {
+	line-height:40px;
+	margin-bottom:40px;
+	font-size:20px;
+	font-weight:300
+}
+.events ul {
+	padding:0;
+}
+.events ul li {
+	line-height:25px;
+	font-size:15px;
+	margin-bottom:15px;
+}
+.events .label {
+	font-size:14px;
+	display:block;
+	text-align:center;
+	padding:0;
+	line-height:25px;
+}
+
+.events .col-xs-3 {
+	border-left:solid 1px #cccccc;
+	padding:0 55px;
+}
+.events .col-xs-3:first-child {
+	border-left:none;
+	padding-left:15px;
+}
+
+
+/* ********************************************************************** */
+/* *************************** Footer *********************************** */
+/* ********************************************************************** */
+
+#footer {
+	padding:24px 0;
+	text-align:right;
+}
+#footer span {
+	font-size:12px;
+	display:inline-block;
+	vertical-align:middle;
+	margin-right:4px;
+}
+.provided {
+	color:#80BA27;
+}
+#footer img {
+	display:inline-block;
+	vertical-align:middle;
+}
+
+
+
+@media (max-width: 767px) {
+	body {
+		font-size:12px;
+	}
+	#header {
+		padding:20px 0 10px;
+	}
+	.logo {
+		max-width:70%;
+	}
+	#header .current-status {
+		position:static;
+		margin-top:10px;
+		text-align:center;
+	}
+	#header .current-status .bullet {
+		float:none;
+		display:inline-block;
+	}
+	#header .current-status strong {
+		display:inline-block;
+		float:none;
+		text-align: left;
+	}
+	.container {
+		padding:0 15px;
+	}
+	h2, .h2 {
+		font-size:22px;
+	}
+	.right-align {
+		text-align:left;
+	}
+	#announcement .panel-default > .panel-heading {
+		padding:10px;
+	}
+	#announcement h3 {
+		padding:0;
+		border:none;
+		float:none;
+		margin:0 0 10px;
+		font-size:20px;
+	}
+	#announcement h4 {
+		padding:0;
+		font-size:14px;
+	}
+	#announcement .arrow {
+		display:none;
+	}
+	.events {
+		font-size:12px;
+	}
+	.events h4 {
+		line-height:20px;
+		margin-bottom:10px;
+		font-size:16px;
+	}
+	.events .col-xs-3 {
+		padding:0 10px;
+		border:none;
+	}
+	.events ul li {
+		font-size:12px;
+		line-height:20px;
+	}
+	.events .label {
+		font-size:11px;
+		line-height:20px;
+		margin-bottom:4px;
+	}
+	
+	.monitor-header .btn {
+		display:block;
+		width:auto;
+		float:none;
+	}
+	.monitor-header .current-status {
+		float:none;
+	}
+	.events h4 {
+		margin:0 0 15px;
+	}
+	.events .col-xs-3:first-child {
+		padding-left:15px;
+	}
+	
+	.table h4 {
+		font-size:12px;
+	}
+	.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+		padding:4px;
+	}
+	.table .label {
+		font-size:11px;
+		padding:4px;
+		margin-bottom:2px;
+	}
+	.table-container {
+		overflow:auto;
+	}
+	.overall-uptime, .latest-downtime {
+		margin-top: 50px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	#header {
+		padding:40px 0 20px;
+	}
+	#announcement h4 {
+		font-size:14px;
+	}
+	#announcement h3 {
+		padding:10px 20px;
+	}
+	#announcement h4 {
+		padding:10px 0;
+	}
+	h2, .h2 {
+		font-size:22px;
+	}
+	.table-container {
+		overflow:auto;
+	}
+}
+@media (min-width: 992px) and (max-width: 1025px) {
+	.events .col-xs-3 {
+		padding:0 20px;
+	}
+	.current-status h3 {
+		font-size:16px;
+		margin-right:10px;
+	}
+	.current-status .bullet {
+		
+		margin-right:6px;
+	}
+	.monitor-header .current-status {
+		margin-right:10px;
+	}
+	#announcement h4 {
+		font-size:16px;
+	}
+}
+
+.panel-group#announcement {
+	margin-bottom:30px;
+}
+#announcement .panel {
+	border:none;
+}
+#announcement .panel-default > .panel-heading {
+	border:none;
+	padding:7px 0;
+	background:#f2f2f2;
+	color:#666666;
+	overflow:hidden;
+	position:relative;
+}
+#announcement .panel-default > .panel-heading + .panel-collapse > .panel-body {
+	border:none;
+}
+#announcement ul,
+#announcement  ul li {
+	margin:0;
+	padding:0;
+}
+#announcement strong {
+	color:#80BA27;
+	font-size:18px;
+	display:block;
+	padding:17px 42px 10px 20px;
+	border-right:solid 1px #e6e6e6;
+	margin:0 ;
+	font-weight:400;
+}
+#announcement .panel-body span {
+	display:block;
+	color:#666666;
+	font-size:18px;
+	font-weight:400;
+	padding:5px 0;
+	margin:0;
+}
+#announcement .arrow {
+	display:block;
+	background:url('../images/announcement-arrow.png') 0 0 no-repeat;
+	width:21px;
+	height:10px;
+	position:absolute;
+	top:50%;
+	right:20px;
+	margin-top:-5px;
+}
+.top-buffer { 
+	margin-top:20px;
+}
+button,
+button:active,
+button:focus, 
+button:hover,
+.btn,
+.btn:active, 
+.btn:focus, 
+.btn:hover{   
+    outline:none !important;
+}
