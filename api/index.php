@@ -11,11 +11,14 @@ if (isset($_GET['addr'])) {
 		if ($result) {
 			echo $result;
 		} else {
+			echo '<h1>Oops, something goes wrong :( Try again later!';
 			header("HTTP/1.1 404 Not Found");
 		}
 	} else {
+		echo '<h1>Don\'t be nesty :(</h1>';
 		header("HTTP/1.1 400 Bad Request");
 	}
 } else {
+	echo '<h1>WTF? You should not be here!</h1>';
 	header("HTTP/1.1 403 Forbidden");
 }
