@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-if (isset($_GET['addr']) && isset($_SERVER['HTTP_REFERER'])) {
+if (isset($_GET['addr'])) {
 	$url = urldecode($_GET['addr']);
 	$referer = parse_url($_SERVER['HTTP_REFERER']);
 	if (true) {//防盗链验证 $referer['host'] == ''
