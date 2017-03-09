@@ -18,6 +18,7 @@ if (empty($_GET['monit'])) {
         Details
     </title>
     <!-- angular.min.js -->
+    <base href="https://hfi.me" />
     <script type="text/javascript" src="//cdn.bootcss.com/angular.js/1.5.0-rc.0/angular.min.js"></script>
     <script src="/js/jquery-1.10.1.min.js"></script>
     <script src="/js/bootstrap.js"></script>
