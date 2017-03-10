@@ -67,7 +67,7 @@ angular
             return;
           }
           if (data.status === 404)
-            return bootbox.alert('Page not found. or might be temporary unavailable. Please refresh page and try again later.');
+            return bootbox.alert('Page not found.');
           //alert(errmsg);
           bootbox.alert('Internal server error. Please try again.');
           window.setTimeout(function () {
@@ -419,7 +419,7 @@ angular
           if (data.status === 401)
             return askAuth($http, getDataFromRemote);
           if (data.status === 404)
-            return bootbox.alert('Page not found. or might be temporary unavailable. Please refresh page and try again later.');
+            return bootbox.alert('Page not found.');
           bootbox.alert('Internal server error. Please try again.');
           window.setTimeout(function () {
             bootbox.hideAll();
