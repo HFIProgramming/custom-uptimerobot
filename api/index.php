@@ -31,7 +31,7 @@ if (isset($_GET['function'])) {
 
 function readMain($function, $url)
 {
-	$home = '/data/htdocs/uptimebot-app.smartgslb.com/data';
+	$home = '/data/htdocs/uptimebot-app.smartgslb.com/data/';
 	if ((!file($home . $function . 'time')) || (time() - file($home . $function . 'time')[0] >= 60)) {
 		$timefile = fopen($home . $function . 'time', "w") or die('Service Temporary Unavailable');
 		$time = time();
