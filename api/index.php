@@ -9,7 +9,6 @@ if (isset($_GET['function'])) {
 		case 'auth':
 			$function = 'auth';
 			$url = $address . '/auth/' . $pageId;
-			header("HTTP/1.1 200 OK");
 			//@TODO Post
 			break;
 		case 'status':
@@ -32,20 +31,21 @@ if (isset($_GET['function'])) {
 
 function readMain($function, $url)
 {
-	if ((!file($function . 'time')) || (time() - file($function . 'time')[0] >= 180)) {
-		$timefile = fopen($function . 'time', "w") or die('errror while open file');
+	$home = '/data/';
+	if ((!file($home . $function . 'time')) || (time() - file($home . $function . 'time')[0] >= 180)) {
+		$timefile = fopen($home . $function . 'time', "w") or die('error while open file');
 		$time = time();
 		fwrite($timefile, $time);
 		fclose($timefile);
 
 		$content = getContent($url);
-		$file = fopen($function, "w") or die('errror while open file');
+		$file = fopen($home . $function, "w") or die('errror while open file');
 		fwrite($file, $content);
 		fclose($file);
 
-		echo file_get_contents($function);
+		echo file_get_contents($home . $function);
 	} else {
-		echo file_get_contents($function);
+		echo file_get_contents($home . $function);
 	}
 }
 
