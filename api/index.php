@@ -9,6 +9,7 @@ if (isset($_GET['function'])) {
 		case 'auth':
 			$function = 'auth';
 			$url = $address . '/auth/' . $pageId;
+			header("HTTP/1.1 200 OK");
 			//@TODO Post
 			break;
 		case 'status':
