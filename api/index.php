@@ -33,13 +33,13 @@ function readMain($function, $url)
 {
 	$home = '/data/htdocs/uptimebot-app.smartgslb.com/data';
 	if ((!file($home . $function . 'time')) || (time() - file($home . $function . 'time')[0] >= 180)) {
-		$timefile = fopen($home . $function . 'time', "w") or die('error while open file');
+		$timefile = fopen($home . $function . 'time', "w") or die('Service Temporary Unavailable');
 		$time = time();
 		fwrite($timefile, $time);
 		fclose($timefile);
 
 		$content = getContent($url);
-		$file = fopen($home . $function, "w") or die('errror while open file');
+		$file = fopen($home . $function, "w") or die('Service Temporary Unavailable');
 		fwrite($file, $content);
 		fclose($file);
 
@@ -70,7 +70,7 @@ function getContent($url)
 			}
 			if ($i >= 5) {
 				echo '<h1>Something goes Wrong! Try again Later :(</h1>';
-				header("HTTP/1.1 404 No Found");
+				header("HTTP/1.1 503 Service Temporary Unavailable");
 				$result = 'Something goes Wrong! Try again Later :(';
 				break;
 			}
