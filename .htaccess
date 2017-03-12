@@ -1,0 +1,4 @@
+# ForceHTTPS
+RewriteEngine On
+RewriteCond %{HTTP:KERSSL} !on
+RewriteRule (.*) https://status.hfi.me/$1 [NC,L,R=301]
