@@ -9,6 +9,7 @@ uptimebot自定义域名使用https
 
 # 手册
 具体布局请自行查看lwl博客
+api相关部署请查阅[这里](https://never.pet/2017/03/23/uptimebot%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/)
 
 # 测试
 本项目已经在hostker上通过测试，[NoticeBoard - demo](https://status.hfi.me)
