@@ -19,7 +19,6 @@ class Delete
 	public function deleteAllFiles()
 	{
 		$files = glob($this->tempDirectory.'*'); // get all file names
-		var_dump($files);
 		foreach ($files as $file) { // iterate files
 			if (is_file($file))
 				unlink($file); // delete file
