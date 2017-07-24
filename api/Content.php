@@ -24,7 +24,6 @@ class Content
 	public function main()
 	{
 		if (isset($_GET['function'])) {
-
 			$function = $_GET['function'];
 			switch ($function) {
 				case 'auth':
@@ -33,7 +32,7 @@ class Content
 					//@TODO Post
 					break;
 				case 'status':
-					if ((isset($_GET['pagenumber']) && isset($_GET['sorttype']))) {
+					if (!(isset($_GET['pagenumber']) && isset($_GET['sorttype']))) {
 						return false;
 					}
 					break;
