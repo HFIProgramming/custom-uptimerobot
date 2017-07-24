@@ -1,15 +1,15 @@
 # custom-uptimebot
-custom uptime-bot public page with php-proxy
+custom uptime-robot public page with php-proxy
 
-uptimebot自定义域名使用https并自定义样式  
+uptime-robot自定义域名使用https并自定义样式  
 
 # 来源
 本项目灵感和大部分代码改编自[lwl的自由天空 - 建立自己的服务状态页](https://blog.lwl12.com/read/create-own-services-status-page.html)一文。  
-但是部分虚拟空间不支持使用反代（**纠正：现在说可以自动签发let's encrypt**，那就是可以增加自己的样式咯233），所以产生了直接使用php获取页面的想法。  
+但是部分虚拟空间不支持使用反代（**纠正：现在说可以自动签发let's encrypt**，那就是可以增加自己的样式咯），所以产生了直接使用php获取页面的想法。  
 
 # 特性
 - 可以随意自定义页面样式
-- 页面样式和信息放在了 `Config` 文件夹下面，方便修改和部署
+- 部分通用页面样式和部署信息放在了 `Config` 文件夹下面，方便修改和部署
 - 全部CSS/JS均针对国内环境进行优化
 - 目前可以缓存数据（间隔为自用户访问起1分钟），防止反代多次刷新出现fail（502）的情况  
 - 不需要数据库！
@@ -33,14 +33,13 @@ uptimebot自定义域名使用https并自定义样式
 
 
 # 测试
-本项目已经在[Hostker](https://www.hostker.com)上通过测试，[NoticeBoard - demo](https://status.hfi.me)
+本项目已经在[Hostker](http://www.hostker.com)上通过测试，[NoticeBoard - demo](https://status.hfi.me)
 
 # @TODO
 - [x] 重构API
 - [x] 清理js （打算使用bootcdn）
-- [ ] 清理缓存
-- [ ] 合并模板
-- [ ] 全restful实现（.htaccess)【不是很会放一会】
+- [x] 清理缓存
+- [ ] 全restful实现并合并模板（.htaccess)【不是很会放一会】
 - [x] 缓存数据并在即时抓取数据不可用时返回用户数据避免出错
 - [ ] 提示缓存数据(前端不如就放过我？)
 
