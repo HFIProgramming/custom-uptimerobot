@@ -25,6 +25,7 @@ class Content
 	{
 		if (isset($_GET['function'])) {
 			$function = $_GET['function'];
+			$filename = false;
 			switch ($function) {
 				case 'auth':
 					//$function = 'auth';
@@ -35,22 +36,23 @@ class Content
 					if (!(isset($_GET['pagenumber']) && isset($_GET['sorttype']))) {
 						return false;
 					}
+					$filename = 'status';
 					break;
 				case 'monit':
-					$function = $_GET['monit'] . 'status';
+					$filename = $_GET['monit'] . 'status';
 					break;
 				default:
 					return false;
 					break;
 			}
 
-			return $this->readData($function, $this->combineAddress($function));
+			return $this->readData($filename, $this->combineAddress($function));
 		}
 
 		return false;
 	}
 
-	public function readData($function, $url)
+	public function readData($filename, $url)
 	{
 		if (
 			(!@file($this->tempDirectory . $function . 'time')) ||  // File Does not exist
