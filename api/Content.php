@@ -24,10 +24,28 @@ class Content
 	public function main()
 	{
 		if (isset($_GET['function'])) {
+
 			$function = $_GET['function'];
-			if ($url = $this->combineAddress($function)) {
-				return $this->readData($function, $url);
+			switch ($function) {
+				case 'auth':
+					//$function = 'auth';
+					//$url = $this->address . '/auth/' . $pageId;
+					//@TODO Post
+					break;
+				case 'status':
+					if ((isset($_GET['pagenumber']) && isset($_GET['sorttype']))) {
+						return false;
+					}
+					break;
+				case 'monit':
+					$function = $_GET['monit'] . 'status';
+					break;
+				default:
+					return false;
+					break;
 			}
+
+			return $this->readData($function, $this->combineAddress($function));
 		}
 
 		return false;
@@ -66,11 +84,7 @@ class Content
 				//@TODO Post
 				break;
 			case 'status':
-				if (isset($_GET['pagenumber']) && isset($_GET['sorttype'])) {
-					$url = $this->address . '/status-page/' . $this->pageId . '/' . $_GET['pagenumber'] . '?sort=' . $_GET['sorttype'];
-				} else {
-					$url = false;
-				}
+				$url = $this->address . '/status-page/' . $this->pageId . '/' . $_GET['pagenumber'] . '?sort=' . $_GET['sorttype'];
 				break;
 			case 'monit':
 				$url = $this->address . '/monitor-page/' . $this->pageId . '/' . $_GET['monit'];
