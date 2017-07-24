@@ -36,18 +36,18 @@ class Content
 	public function readData($function, $url)
 	{
 		if (
-			(!file($this->tempDirectory . $function . 'time')) ||  // File Does not exist
-			(time() - file($this->tempDirectory . $function . 'time')[0] >= $this->time // Data Expire
+			(!@file($this->tempDirectory . $function . 'time')) ||  // File Does not exist
+			(time() - @file($this->tempDirectory . $function . 'time')[0] >= $this->time // Data Expire
 			)
 		) {
 			$time = time();
-			$timeFile = fopen($this->tempDirectory . $function . 'time', 'w+') or die('Service Temporary Unavailable, No Write Permission');
+			$timeFile = @fopen($this->tempDirectory . $function . 'time', 'w+') or die('Service Temporary Unavailable, No Write Permission');
 			fwrite($timeFile, $time); // Write Generated time
 			fclose($timeFile);
 
 			$content = $this->getContent($url);
 
-			$dataFile = fopen($this->tempDirectory . $function, 'w+') or die('Service Temporary Unavailable, No Write Permission');
+			$dataFile = @fopen($this->tempDirectory . $function, 'w+') or die('Service Temporary Unavailable, No Write Permission');
 			fwrite($dataFile, $content);  // Write Data
 			fclose($dataFile);
 		}
