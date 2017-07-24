@@ -1,5 +1,5 @@
-@import url(bootstrap.css);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css);
+@import url(https://fonts.lug.ustc.edu.cn/css?family=Montserrat:400,700);
 
 /* ********************************************************************** */
 /* ************************** General HTML TAGs ************************* */

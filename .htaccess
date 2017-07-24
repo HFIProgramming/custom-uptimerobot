@@ -2,3 +2,15 @@
 RewriteEngine On
 RewriteCond %{HTTP:KERSSL} !on
 RewriteRule (.*) https://status.hfi.me/$1 [NC,L,R=301]
+
+# Prevent Leaking Config
+<Location config/>
+  Order allow,deny
+  Deny from all
+</Location>
+
+# Prevent Temp Access
+<Location temp/>
+  Order allow,deny
+  Deny from all
+</Location>
