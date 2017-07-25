@@ -242,7 +242,7 @@ $info = include_once "./config/info.php";
             <a href="<?php echo $info['owner_url'] ?>"><span
                         class="provided"><?php echo $info['owner_name'] ?></span></a><span><a
                         href="https://lwl.moe/" target="_blank">本页面衍生自 LWL的自由天空 旗下监控页</a> | </span><a
-                    href="https://github.com/HFIProgramming/custom-uptimebot"><span> 项目地址 | </span></a><span
+                    href="https://github.com/HFIProgramming/custom-uptimerobot"><span> 项目地址 | </span></a><span
                     class="hitokoto" id="hitokoto">Loading...</span>
         </div>
         <span class="provided">Provided by:</span>
@@ -265,6 +265,13 @@ $info = include_once "./config/info.php";
     </div>
 
 </div>
+<?php
+if (!empty($info['google_analytics'])) {
+	echo '<script>(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,\'script\',\'https://www.google-analytics.com/analytics.js\',\'ga\');
+    ga(\'create\', \'' . $info['google_analytics'] . '\', \'auto\');
+    ga(\'send\', \'pageview\');</script>';
+}
+?>
 </body>
 
 </html>
