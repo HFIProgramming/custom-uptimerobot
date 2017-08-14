@@ -45,15 +45,27 @@ class Content
                     return false;
                     break;
             }
-
+		//@TODO make things clear
             if ($function == 'status') {
                 $data = json_decode($this->readData($filename, $this->combineAddress($function)), true);
 				for ($i=0; $i < count($data["psp"]["monitors"]); $i++) {
 					usort($data["psp"]["monitors"][$i]["allLogs"],function($a,$b){return -($a['timestamp']<=>$b['timestamp']);});
 				}
 				return json_encode($data);
+		    
+
+            } elseif ($function == 'monit') {
+                $data = json_decode($this->readData($filename, $this->combineAddress($function)), true);
+        		for ($i=0; $i < count($data["psp"]["monitors"]); $i++) {
+          		usort($data["psp"]["monitors"][$i]["allLogs"],function($a,$b){return -($a['timestamp']<=>$b['timestamp']);});
+       			}
+        	return json_encode($data);
 
             } else {
+                return $this->readData($filename, $this->combineAddress($function));
+            }
+	    
+	    else{
                 return $this->readData($filename, $this->combineAddress($function));
             }
         }
