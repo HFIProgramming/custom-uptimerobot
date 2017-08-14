@@ -46,15 +46,7 @@ class Content
                     break;
             }
 		//@TODO make things clear
-            if ($function == 'status') {
-                $data = json_decode($this->readData($filename, $this->combineAddress($function)), true);
-				for ($i=0; $i < count($data["psp"]["monitors"]); $i++) {
-					usort($data["psp"]["monitors"][$i]["allLogs"],function($a,$b){return -($a['timestamp']<=>$b['timestamp']);});
-				}
-				return json_encode($data);
-		    
-
-            } elseif ($function == 'monit') {
+          if ($function == 'monit') {
                 $data = json_decode($this->readData($filename, $this->combineAddress($function)), true);
         		for ($i=0; $i < count($data["psp"]["monitors"]); $i++) {
           		usort($data["psp"]["monitors"][$i]["allLogs"],function($a,$b){return -($a['timestamp']<=>$b['timestamp']);});
