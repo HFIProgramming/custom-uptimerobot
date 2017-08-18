@@ -149,6 +149,7 @@ class Content
                     break;
                 }elseif(($status = $this->parseHeaders($$http_response_header)['reponse_code']) != 200){
                     $result = 'Something goes Wrong[Up stream error code['.$status.'] Try again Later :(';
+		    break;	
                 }
 
                 // Write Error Message When Failed too many times.
