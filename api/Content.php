@@ -56,10 +56,6 @@ class Content
             } else {
                 return $this->readData($filename, $this->combineAddress($function));
             }
-	    
-	    else{
-                return $this->readData($filename, $this->combineAddress($function));
-            }
         }
 
         return false;
