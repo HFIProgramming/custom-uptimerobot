@@ -106,6 +106,24 @@ class Content
         return $url;
     }
 
+    public function parseHeaders( $headers )
+    {
+        $head = array();
+        foreach( $headers as $k=>$v )
+        {
+            $t = explode( ':', $v, 2 );
+            if( isset( $t[1] ) )
+                $head[ trim($t[0]) ] = trim( $t[1] );
+            else
+            {
+                $head[] = $v;
+                if( preg_match( "#HTTP/[0-9\.]+\s+([0-9]+)#",$v, $out ) )
+                    $head['reponse_code'] = intval($out[1]);
+            }
+        }
+        return $head;
+    }
+
     public function getContent($url)
     {
         if (!empty($url)) {
@@ -123,11 +141,14 @@ class Content
             $i = 1;  // Retry Times
 
             while (true) {
-                $result = file_get_contents($url, false, stream_context_create($opts));
+                $result = @file_get_contents($url, false, stream_context_create($opts));
 
                 // Jump out when Success.
+                // Stop when status code != 200 (Upstream error)
                 if ($result) {
                     break;
+                }elseif(($status = $this->parseHeaders($$http_response_header)['reponse_code']) != 200){
+                    $result = 'Something goes Wrong[Up stream error code['.$status.'] Try again Later :(';
                 }
 
                 // Write Error Message When Failed too many times.
