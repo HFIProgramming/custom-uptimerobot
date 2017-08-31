@@ -17,6 +17,7 @@ uptime-robot自定义域名使用https并自定义样式
 
 # 当前版本手册(V2.0)
 **注意，PHP版本要求为7.0或以上**
+- 第一，请先将`Config`文件夹内的`config.example.php`和`info.example.php`复制为原始名字(`config.php`和`info.php`)
 - `Config/config.php` 请填写你的`dir`(缓存目录，必须可读写，必填),`pageId`(页面ID，必填),`clean_key`(缓存清理key，必填),`expire`(缓存过期时间，选填，默认60秒),`google_analytics`(谷歌分析ID,选填）
 - 前端页面随意定制，部分信息可以在`Config/info.php`中修改，其中`base_url`必填（防止部分意外情况导致xhr从https回落http），但是列表样式使用请查看上方lwl博客
 - 缓存地址请记得要手动创建好，可读写，需要**绝对路径**，别忘记最后还要有`/`
