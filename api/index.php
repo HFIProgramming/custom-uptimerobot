@@ -6,17 +6,17 @@ spl_autoload_register(function ($class_name) {
 $config = require_once '../config/config.php';
 
 if (!isset($_GET['clean'])) {
-	$content = new Content($config['dir'], $config['pageId'],$config['expire']);
+	$content = new Content($config['dir'], $config['pageId'], $config['expire'], $config['userAgent']);
 	if ($content = $content->main()) {
 		echo $content;
 	} else {
 		header('HTTP/1.1 500 Internal Service Error');
 		echo 'Service Unavailable';
 	}
-} elseif (strcmp($config['clean_key'],$_GET['clean']) === 0) {
+} elseif (strcmp($config['clean_key'], $_GET['clean']) === 0) {
 	$delete = new Delete($config['dir']);
 	echo $delete->deleteAllFiles();
-}else{
+} else {
 	header('HTTP/1.1 404 No Found');
 }
 
