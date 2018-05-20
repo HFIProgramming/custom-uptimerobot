@@ -37,6 +37,8 @@ $info = include_once "./config/info.php";
         <script src="/public/js/controllers.js"></script>
         <script src="/public/js/services.js"></script>
         <script src="/public/js/app.js"></script>
+        <link rel="stylesheet" href="/public/css/default.css"/>
+        <link rel="stylesheet" href="/public/css/main.css"/>
         <script type="text/javascript">
             var noPrefix = 'false' === 'true';
             var pageNumber = parseInt('1', 10);
