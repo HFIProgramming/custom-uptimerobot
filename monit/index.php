@@ -19,17 +19,18 @@ if (empty($_GET['monit'])) {
     <title><?php echo $info['title'] ?></title>
     <base href="<?php echo $info['base_url'] ?>"/>
     <!-- lib js -->
-    <script src="//cdn.bootcss.com/angular.js/1.5.0-rc.0/angular.min.js"></script>
-    <script src="//cdn.bootcss.com/jquery/1.10.1/jquery.min.js"></script>
-    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> <!--min-->
-    <script src="//cdn.bootcss.com/jqPlot/1.0.8/jquery.jqplot.min.js"></script>
-    <script src="//cdn.bootcss.com/flot/0.8.3/jquery.flot.min.js"></script>
-    <script src="//cdn.bootcss.com/flot/0.8.3/jquery.flot.time.min.js"></script>
-    <script src="//cdn.bootcss.com/flot/0.8.3/jquery.flot.resize.min.js"></script>
-    <script src="//cdn.bootcss.com/qtip2/2.2.1/jquery.qtip.min.js"></script>
-    <script src="//cdn.bootcss.com/bootbox.js/4.4.0/bootbox.min.js"></script>
+        <script src="https://cdnjs.loli.net/ajax/libs/angular.js/1.5.0-rc.0/angular.min.js"></script>
+        <script src="https://cdnjs.loli.net/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="https://cdnjs.loli.net/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <!--min-->
+        <script src="https://cdnjs.loli.net/ajax/libs/jqPlot/1.0.8/jquery.jqplot.min.js"></script>
+        <script src="https://cdnjs.loli.net/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
+        <script src="https://cdnjs.loli.net/ajax/libs/flot/0.8.3/jquery.flot.time.min.js"></script>
+        <script src="https://cdnjs.loli.net/ajax/libs/flot/0.8.3/jquery.flot.resize.min.js"></script>
+        <script src="https://cdnjs.loli.net/ajax/libs/qtip2/2.2.1/jquery.qtip.min.js"></script>
+        <script src="https://cdnjs.loli.net/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
     <!-- lib css -->
-    <link href="//cdn.bootcss.com/qtip2/2.2.1/basic/jquery.qtip.min.css" rel="stylesheet">
+        <link href="https://cdnjs.loli.net/ajax/libs/qtip2/2.2.1/basic/jquery.qtip.min.css" rel="stylesheet">
     <!--Local Source-->
     <script src="/public/js/angular-flot.js"></script>
     <script src="/public/js/jquery.truncate.min.js"></script>
