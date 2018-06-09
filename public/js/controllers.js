@@ -63,17 +63,21 @@ angular
           if (data.status === 401) {
             // not authenticated to see this page
             // ask for password and try again
-            askAuth($http, getDataFromRemote);
+              bootbox.alert('Page Required Authorication. ：' + data, function() {
+                  window.setTimeout(function () {
+                      location.reload(true);
+                  }, 3000);
+              });
             return;
           }
           if (data.status === 404)
             return bootbox.alert('Page not found.');
           //alert(errmsg);
-          bootbox.alert('Internal server error. Please try again.');
-          window.setTimeout(function () {
-            bootbox.hideAll();
-            location.reload(true);
-          }, 3000);
+          bootbox.alert('Internal server error. Please try again. ：' + data, function() {
+              window.setTimeout(function () {
+                  location.reload(true);
+              }, 3000);
+          });
         });
     }
 
@@ -121,8 +125,10 @@ angular
 
       var monitors = resp.data.psp.monitors;
       for (var i = 0; i < monitors.length; i++) {
-        if (monitors[i].allLogs[0].statusStr === 'down') {
-          $('tbody>.ng-scope').eq(i).addClass('down');
+        if(monitors[i].allLogs[0] !== undefined){
+            if (monitors[i].allLogs[0].statusStr === 'down') {
+                $('tbody>.ng-scope').eq(i).addClass('down');
+            }
         }
       }
 
